@@ -237,7 +237,8 @@ mrlm <- function(M,design=NULL,ndups=1,spacing=1,weights=NULL,...)
   
   ####################################################################################
   library(BiocParallel)
-  n_workers <- 32
+  n_workers <- parallel::detectCores() - 1
+  # n_workers <- 32
   options(MulticoreParam=MulticoreParam(workers=n_workers))
   
   FUN <- function(i){
