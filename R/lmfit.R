@@ -281,7 +281,6 @@ mrlm <- function(M,design=NULL,ndups=1,spacing=1,weights=NULL,...)
       ((step*(x-1))+1):(step*(x))
     }
   })
-  browser()
   results <- bplapply(indexes, FUN)
   
   for (x in 1:length(results)){
